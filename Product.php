@@ -1,13 +1,4 @@
-<?php
-// Initialize the session
-session_start();
 
-// Check if the user is logged in, if so then redirect them to the home page
-if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
-    header("location: Product.php");
-    exit;
-}
-?>
 <html>
 <head>
     <link href="stylesheet.css" rel="stylesheet">
@@ -19,7 +10,7 @@ if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
   <header>
     <a id="logo" href="https://GoToGro.com">GoToGro<sup>TM</sup></a>
   </header>
-  <div class="login">
+  <div class="AddClass">
     <h1 id="login-header">Add New Product</h1>
     <form id="add-product-form" action="AddProduct.php" method="post">
         <input type="text" name="ProductName" placeholder="Product Name" required="required" />
