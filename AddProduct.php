@@ -15,7 +15,10 @@ $quantity = $_POST['Quantity'];
 $price = $_POST['Price'];
 
 // Attempt insert query execution
-$sql = "INSERT INTO Products (ProductName, Quantity, Price) VALUES ($productName, $quantity, $price)";
+$sql = "INSERT INTO Products (ProductName, Quantity, Price) VALUES (\"$productName\",\"$quantity\",\"$price\")";
+
+
+
 if(mysqli_query($link, $sql)){
     echo "Records inserted successfully.";
 } else{
