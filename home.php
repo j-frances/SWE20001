@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
     <a id="logo" href="https://GoToGro.com">GoToGro<sup>TM</sup></a>
     <?php echo "<a>Logged in as, " . $_SESSION['username'] . "</a>" ; ?>
     <a id="logout" href="logout.php">| Log Out</a>
-    <button id="add_product_button">Add New Product</button>
+    <button id="add_product_button"><a href="Product.php">Add New Product</button>
   </header>
   <div class="dashboard">
     <?php
