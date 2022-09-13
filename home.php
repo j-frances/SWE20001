@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
             }else{
                 echo "<a href=\"new_user.php\">| Add New User</a>
                 <a href=\"new_user.php\">| Add New Member</a>
-                <a href=\"new_user.php\">| Add New Sales Record</a>
+                <a href=\"new_sale.php\">| Add Sales Record</a>
                 <a href=\"Product.php\">| Add New Product</a>";
             }
         }
