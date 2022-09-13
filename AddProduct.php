@@ -17,13 +17,22 @@ $price = $_POST['Price'];
 // Attempt insert query execution
 $sql = "INSERT INTO Products (ProductName, Quantity, Price) VALUES (\"$productName\",\"$quantity\",\"$price\")";
 
+$reset = "ALTER TABLE Products AUTO_INCREMENT = 1";
+
+mysqli_query($link, $sql);
+mysqli_query($link, $reset);
 
 
-if(mysqli_query($link, $sql)){
-    echo "Records inserted successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
+
+
+header("Location: https://gotogro.000webhostapp.com/Product.php");
+
+
+//if(mysqli_query($link, $sql)){
+//   echo "Records inserted successfully.";
+//} else{
+//    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+//}
  
 // Close connection
 mysqli_close($link);
