@@ -19,13 +19,19 @@ if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
   <header>
     <a id="logo" href="https://GoToGro.com">GoToGro<sup>TM</sup></a>
   </header>
-  <h1>Management Portal</h1>
   <div class="login">
-      <form action="login.php" method="post">
+    <h1 id="login-header">Log-in</h1>
+    <a id="login-prompt-1">Welcome back!</a>
+    <a id="login-prompt-2"><br>Please login to your account to continue</a>
+      <form id="login-form" action="login.php" method="post">
         <input type="text" name="username" placeholder="Username" required="required" />
           <input type="password" name="password" placeholder="Password" required="required" />
           <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
       </form>
+      <a id="login-forgot-password" href="https://google.com">Forgot password?</a>
+      <hr>
+      <a id="login-no-account-1">Don't have an account?<a id="login-no-account-2" href=""> Sign up</a></a>
+
   </div>
   <footer>
     <a>&#169 GoToGro Inc. 2022</a>
