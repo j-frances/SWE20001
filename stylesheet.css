@@ -27,108 +27,29 @@ body {
   height:100%;
   font-family: 'Open Sans', sans-serif;
   background-image: linear-gradient(
-    165deg,
+    130deg,
     hsl(55deg 100% 50%) 0%,
-    hsl(49deg 100% 54%) 12%,
-    hsl(42deg 100% 58%) 25%,
-    hsl(34deg 100% 61%) 38%,
-    hsl(27deg 100% 64%) 50%,
-    hsl(30deg 97% 60%) 62%,
-    hsl(45deg 100% 47%) 72%,
-    hsl(59deg 100% 41%) 82%,
-    hsl(79deg 100% 45%) 91%,
+    hsl(29deg 100% 50%) 33%,
+    hsl(35deg 100% 46%) 67%,
     hsl(124deg 100% 50%) 100%
   );
 }
 
-.dashboard {
-  position: absolute;
-  align: center;
-  width:auto;
-  height:auto;
-  margin: 75px;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 25px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+#add_product_button {
+	box-shadow: 0px 0px 5px 0px #010500;
+	background-color:#44c767;
+	border-radius:15px;
+	border:1px solid #30ba3e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:5px 10px;
+  right: 5%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
-
-sup {
-  vertical-align: super;
-  font-size: small;
-  font-size: 0.5em;
-}
-
-
-.login {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  margin: -150px 0 0 -150px;
-  width:300px;
-  height:300px;
-}
-
-.homepage a, .index a {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0,0,0,0.3);
-  letter-spacing:1px;
-  text-decoration: none;
-}
-
-.homepage footer, .index footer {
-  position: absolute;
-  bottom: 0%;
-  margin: 5px;
-}
-
-.homepage header, .index header{
-  position: absolute;
-  top: 0%;
-  margin: 5px;
-}
-
-.homepage h1, .index h1{
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0,0,0,0.3);
-  letter-spacing:1px;
-  text-align:center;
-  font-size: 40px;
-  margin-top: 240px;
-  font-family: 'Lobster Two';
-  margin-left: -20px;
-}
-
-#logo {
-  font-family: 'Lobster';
-  font-size: 2em;
-}
-
-#logout{
-  right: 0%;
-}
-
-input {
-  width: 100%;
-  margin-bottom: 10px;
-  background: rgba(0,0,0,0.3);
-  border: none;
-  outline: none;
-  padding: 10px;
-  font-size: 13px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
-  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
-  -webkit-transition: box-shadow .5s ease;
-  -moz-transition: box-shadow .5s ease;
-  -o-transition: box-shadow .5s ease;
-  -ms-transition: box-shadow .5s ease;
-  transition: box-shadow .5s ease;
-}
-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
-
 
 #add_user_button {
 	box-shadow: 0px 0px 5px 0px #010500;
@@ -145,6 +66,236 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
+
+
+.dashboard {
+  position: relative;
+  align: center;
+  width:90%;
+  height:auto;
+  margin: 55px;
+  margin-bottom: -40px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.dashboard .table{
+    width: 100%;
+    text-align: left;
+}
+
+sup {
+  vertical-align: super;
+  font-size: small;
+  font-size: 0.5em;
+}
+
+.add-user {
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: -300px 0 0 -150px;
+  width:400px;
+  height:500px;
+  border-radius: 10px;
+  padding: 25px;
+  padding-top: 0px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.add-user .add-user-btn {
+    margin-top: 75px;
+}
+
+.add-user .add-user-header{
+    color: #151;
+    margin-bottom: 50px;
+    letter-spacing: -2px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.9);
+    font-family: 'Lobster Two';
+}
+
+.add-user .add-user-prompt-1{
+  color: grey;
+  font-size: 10px;
+  text-align: left;
+}
+
+.add-user .add-user-prompt-2{
+  color: grey;
+  font-size: 10px;
+  text-align: left;
+  margin-bottom: 100px;
+}
+
+.login {
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: -300px 0 0 -150px;
+  width:300px;
+  height:500px;
+  border-radius: 10px;
+  padding: 25px;
+  padding-top: 0px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.homepage {
+    overflow: scroll;
+    padding-bottom: 100px;
+}
+
+.homepage .table-header{
+    color: 151;
+    font-family: 'Lobster Two';
+    margin-top:-10px;
+    font-size: 20px;
+}
+
+.homepage .table{
+    color: 151;
+}
+
+.homepage a, .index a {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  letter-spacing:1px;
+  text-decoration: none;
+}
+
+.homepage footer, .index footer {
+  position: absolute;
+  bottom: 0%;
+  padding-left:10px;
+  left:0%;
+  width: 100%;
+  background:white;
+  border-radius:5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.homepage footer a {
+    color:#151;
+    font-size:10px;
+}
+
+.homepage header, .index header{
+  position: absolute;
+  top: 0%;
+  margin: 5px;
+}
+
+.index #login-header{
+  color: #151;
+  /* text-shadow: 0 0 10px rgba(0,0,0,0.3); */
+  text-align:center;
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9);
+  font-family: 'Lobster Two';
+}
+
+.index .login #login-forgot-password{
+  color: grey;
+  margin-left: 34%;
+  font-size: 10px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
+
+.index .login #login-no-account-1{
+  color: grey;
+  margin-left: 15%;
+  font-size: 10px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9);
+
+}
+
+.index .login #login-no-account-2{
+  color: grey;
+  font-size: 10px;
+  color: blue;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9);
+
+}
+
+.index .login #login-prompt-1{
+  color: grey;
+  font-size: 10px;
+  position: absolute;
+  text-align: center;
+  left: 38%;
+}
+
+.index .login #login-prompt-2{
+  color: grey;
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  left: 12%;
+}
+
+.index .login #login-form{
+  margin-top:70px;
+}
+
+#logo {
+  font-family: 'Lobster';
+  font-size: 2em;
+}
+
+#logout{
+  right: 0%;
+}
+
+input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background: rgba(255,0,0,0.1);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+hr{
+  outline: 0;
+  height: 1px;
+  border: none;
+  margin-top:30px;
+  margin-bottom: 40px;
+  background: #c0c0c0;
+}
+
+.homepage hr{
+    outline: 0;
+    height: 1px;
+    border: none;
+    background: #c0c0c0;
+    margin-top:10px;
+    margin-bottom:0px;
+}
+
+
+
 
 .open-button {
   background-color: #555;
