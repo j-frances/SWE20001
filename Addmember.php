@@ -12,12 +12,12 @@ if ($mysqli -> connect_errno) {
 // input value 
 $Name = $_POST['Name'];
 $Email = $_POST['Email'];
-$Date_Created = $_POST['Date_Created'];
-$Expiration_Date = $_POST['Expiration_Date'];
+$date_Created = date("Y-m-d H:i:s");
+$expiration_Date=date('Y-m-d', strtotime('+1 year', strtotime($date_Created)) );
 $Status = $_POST['Status'];
 
 // Attempt insert query execution
-$sql = "INSERT INTO Members (Name, Email, Date_Created, Expiration_Date, Status) VALUES (\"$Name\",\"$Email\",\"$Date_Created\",\"$Expiration_Date\",\"$Status\")";
+$sql = "INSERT INTO Members (Name, Email, Date_Created, Expiration_Date, Status) VALUES (\"$Name\",\"$Email\",\"$date_Created\",\"$expiration_Date\",\"$Status\")";
 
 $reset = "ALTER TABLE Members AUTO_INCREMENT = 1";
 
