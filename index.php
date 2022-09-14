@@ -13,6 +13,7 @@ if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
     <link href="stylesheet.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
     <title>GoToGro Management Portal</title>
 </head>
 <body class="index">
@@ -30,7 +31,7 @@ if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
       </form>
       <a id="login-forgot-password" href="https://google.com">Forgot password?</a>
       <hr>
-      <a id="login-no-account-1">Don't have an account?<a id="login-no-account-2" href=""> Sign up</a></a>
+      <a id="login-no-account-1">Don't have an account?<a id="login-no-account-2" href="mailto:administrator@gotogro.com"><br> Contact your administrator</a></a>
 
   </div>
   <footer>
