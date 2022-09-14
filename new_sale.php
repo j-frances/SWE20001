@@ -68,18 +68,20 @@
         </form>
     </div>
 
+    <!-- Driver For Dynamically Renderning Form -->
     <script>
-        // Get Products From Database To JavaScript
+        // Get Products In Stock From Database To JavaScript
         let productList = [];
         <?php
             while ($product = $products_result->fetch_assoc())
-                echo  "productList.push({id:" . $product["ID"] .
-                    ", name:'" . $product["ProductName"] . "'" .
-                    ", qty:" . $product["Quantity"] .
-                    ", price:" . $product["Price"] . "}); ";
+                if (intval($product["Quantity"]) > 0)
+                    echo  "productList.push({id:" . $product["ID"] .
+                        ", name:'" . $product["ProductName"] . "'" .
+                        ", qty:" . $product["Quantity"] .
+                        ", price:" . $product["Price"] . "}); ";
         ?>
 
-        // Keep Count Of Additional Products
+        // Keep Count Of Products
         let productsCount = 0;
         // Get Reference To DOM Element
         let productsField = document.getElementById("productsField");
