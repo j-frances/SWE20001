@@ -88,7 +88,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
     <div class="dashboard">
     <table class="table">
         <h3 class="table-header">Products:</h3>
-        <a class= "table-header" href="Product.php">Edit Product</a>
         <thead>
 			<tr>
 				<th>ID</th>
