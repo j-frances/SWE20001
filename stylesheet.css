@@ -79,6 +79,7 @@ body {
   border-radius: 5px;
   padding: 25px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .dashboard .table{
@@ -152,8 +153,8 @@ sup {
 
 .homepage .table-header{
     color: 151;
-    font-family: 'Lobster Two';
-    margin-top:-10px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    margin-top:-5px;
     font-size: 20px;
 }
 
@@ -179,9 +180,10 @@ sup {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.homepage footer a {
+.homepage footer a, .index footer a {
     color:#151;
     font-size:10px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .homepage header, .index header{
@@ -193,28 +195,27 @@ sup {
 .index #login-header{
   color: #151;
   /* text-shadow: 0 0 10px rgba(0,0,0,0.3); */
-  text-align:center;
+  text-align:left;
   font-weight: 600;
   font-size: 40px;
   margin-bottom: 30px;
   letter-spacing: -2px;
   text-shadow: 0 0 10px rgba(255,255,255,0.9);
-  font-family: 'Lobster Two';
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .index .login #login-forgot-password{
   color: grey;
-  margin-left: 34%;
   font-size: 10px;
   text-shadow: 0 0 10px rgba(255,255,255,0.9);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .index .login #login-no-account-1{
   color: grey;
-  margin-left: 15%;
   font-size: 10px;
   text-shadow: 0 0 10px rgba(255,255,255,0.9);
-
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .index .login #login-no-account-2{
@@ -222,6 +223,7 @@ sup {
   font-size: 10px;
   color: blue;
   text-shadow: 0 0 10px rgba(255,255,255,0.9);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 
 }
 
@@ -229,16 +231,16 @@ sup {
   color: grey;
   font-size: 10px;
   position: absolute;
-  text-align: center;
-  left: 38%;
+  text-align: left;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .index .login #login-prompt-2{
   color: grey;
   font-size: 10px;
-  text-align: center;
+  text-align: left;
   position: absolute;
-  left: 12%;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 .index .login #login-form{
