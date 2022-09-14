@@ -47,8 +47,14 @@
 
     <!-- New Sales Entry Form -->
     <div class="wrapper">
+        <?php
+            if (isset($_SESSION["saleSuccess"]) && $_SESSION["saleSuccess"] = true) {
+                echo "<p class='successMsg'>Sales entry added successfully!</p>";
+                unset($_SESSION["saleSuccess"]);
+            }
+        ?>
         <h1>New Sales Entry</h1>
-        <form action="" method="POST">
+        <form action="scripts/add_sale.php" method="POST">
             <!-- Select Member -->
             <label for="select_member">Choose a member:</label>
             <select name="select_member" id="select_member" required>
@@ -141,6 +147,7 @@
             productsCount++;
         }
 
+        // Start With 1 Product When Page Loads
         window.onload = addProduct;
     </script>
 </body>

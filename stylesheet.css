@@ -371,3 +371,6 @@ hr{
   text-decoration: none;
   margin-left: 5px;
 }
+.sales_entry .successMsg {
+  color: rgb(0, 172, 0);
+}
