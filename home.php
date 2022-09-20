@@ -3,12 +3,13 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     header("location: index.php");
     exit;
 }
 
 ?>
+
 <html>
 <head>
   <link href="stylesheet.css" rel="stylesheet">
@@ -96,6 +97,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
       <summary>
         <h3 class="table-header">Products</h3>
       </summary>
+      <form action="EditExistingProduct.php" class="edit-user-form" method="post">
       <table class="table">
         <thead>
 			<tr>
@@ -118,7 +120,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
             // read data of each row
 			while($row = $result->fetch_assoc()) {
                 echo "<tr>
-                    <td><input type=\"checkbox\" onclick=\"edit_products_btn_trigger(this)\" id=" . $row["ID"] . "</td>
+                    <td><input type=\"checkbox\" name=\"Check[]\" onclick=\"edit_products_btn_trigger(this)\" id=" . $row["ID"] . "</td>
+                    <td><input type=\"hidden\" name=\"ID[]\" value=". $row["ID"] . ">" . $row["ID"] . "</td>
                     <td>" . $row["ID"] . "</td>
                     <td>" . $row["ProductName"] . "</td>
                     <td>" . $row["Quantity"] . "</td>
@@ -130,8 +133,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== "true"){
       </tbody>
     </table>
     <input type="submit" id="edit_products_btn" value="Edit Product(s)">
+    </form>
     </details>
     </div>
+    
+    
     <div class="dashboard">
       <details>
         <summary>
