@@ -115,7 +115,7 @@ sup {
   font-size: 0.5em;
 }
 
-.add-user {
+.add-user, .edit-user{
   background-color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 60%;
@@ -129,11 +129,11 @@ sup {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.add-user .add-user-btn {
+.add-user .add-user-btn, .edit-user .edit-user-btn {
     margin-top: 75px;
 }
 
-.add-user .add-user-header{
+.add-user .add-user-header, .edit-user .edit-user-header{
     color: #151;
     margin-bottom: 50px;
     letter-spacing: -2px;
@@ -141,18 +141,19 @@ sup {
     font-family: 'Lobster Two';
 }
 
-.add-user .add-user-prompt-1{
+.add-user .add-user-prompt-1, .edit-user .edit-user-prompt-1{
   color: grey;
   font-size: 10px;
   text-align: left;
 }
 
-.add-user .add-user-prompt-2{
+.add-user .add-user-prompt-2, .edit-user .edit-user-prompt-2{
   color: grey;
   font-size: 10px;
   text-align: left;
   margin-bottom: 100px;
 }
+
 
 .login {
   background-color: rgba(255, 255, 255, 1);
