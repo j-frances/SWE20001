@@ -15,9 +15,7 @@ foreach($_POST['ID'] as $ID){
     $productName = $_POST['ProductName'];
     $quantity = $_POST['Quantity'];
     $price = $_POST['Price'];
-    
-    
-    
+
     $select = mysqli_query($mysqli, "SELECT `ID` FROM `Products` WHERE `ID` = '".$_POST['ID']."'") or exit(mysqli_error($mysqli));
     if(mysqli_num_rows($select)) {
         $sql = "UPDATE `Products` SET `ProductName` = \"$productName\", `Quantity`= \"$quantity\", `Price` = \"$price\" WHERE `ID` = \"$ID\"";
