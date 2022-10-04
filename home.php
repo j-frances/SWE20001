@@ -122,11 +122,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
 			$result = $link->query($sql);
 
             // read data of each row
+            //<td>" . $row["ID"] . "</td>
 			while($row = $result->fetch_assoc()) {
                 echo "<tr>
                     <td><input type=\"checkbox\" name=\"Check[]\" onclick=\"edit_products_btn_trigger(this)\" id=" . $row["ID"] . "</td>
                     <td><input type=\"hidden\" name=\"ID[]\" value=". $row["ID"] . ">" . $row["ID"] . "</td>
-                    <td>" . $row["ID"] . "</td>
+                    
                     <td>" . $row["ProductName"] . "</td>
                     <td>" . $row["Quantity"] . "</td>
                     <td>" . $row["Price"] . "</td>
