@@ -17,7 +17,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap">
   <title>🥬 GoToGro Management Portal</title>
 </head>
-<body class="homepage">
+<body class="homepage" onunload="test()">
   <header>
     <a id="logo" href="index.php">GoToGro<sup>TM</sup></a>
     <?php 
@@ -38,7 +38,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 <a href=\"Newmember.php\">| Add New Member</a>
                 <a href=\"new_sale.php\">| Add Sales Record</a>
                 <a href=\"Product.php\">| Add New Product</a>
-                <input type=\"checkbox\" onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"</td>";
+                <input type=\"checkbox\" onclick=\"(this)\" id=\"del_edit_toggle\"</td>";
             }
         }
     }
@@ -50,6 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     <summary>
       <h3 class="table-header">Members</h3>
     </summary>
+    <form action="EditMembers.php" class="edit-members-form" method="post">
     <table class="table">
       <thead>
         <tr>
@@ -92,7 +93,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       </table>
       <input type="submit" id="edit_members_btn" value="Edit Member(s)">
       <input type="submit" id="del_members_btn" value="Delete Members(s)">
-
+    </form>
   </details>
   </div>
   <div class="dashboard">
@@ -100,7 +101,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       <summary>
         <h3 class="table-header">Products</h3>
       </summary>
-      <form action="EditExistingProduct.php" class="edit-user-form" method="post">
+      <form action="EditExistingProduct.php" class="edit-products-form" method="post">
       <table class="table">
         <thead>
 			<tr>
@@ -236,6 +237,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     
     del_edit_toggle_counter = 0;
     
+    window.addEventListener("pageshow", () => {
+        let checkboxes = document.querySelectorAll("input");
+        checkboxes.forEach(input => {
+            if (input.type == "checkbox")
+                input.checked = false;
+        });
+    });
+    
     var edit_members_btn = document.getElementById("edit_members_btn");
     var edit_products_btn = document.getElementById("edit_products_btn");
     var edit_verified_btn = document.getElementById("edit_verified_btn");
@@ -244,12 +253,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     var del_products_btn = document.getElementById("del_products_btn");
     var del_verified_btn = document.getElementById("del_verified_btn");
     
+    var edit_members_form = document.getElementsByClassName("edit-members-form")[0].attributes[0];
+    var edit_products_form = document.getElementsByClassName("edit-products-form")[0].attributes[0];
+    var edit_user_form = document.getElementsByClassName("edit-user-form")[0].attributes[0];
+    
     function del_edit_toggle_btn_trigger(val){
         if(val.checked){
             del_edit_toggle_counter++;
+            
+            edit_members_form.action = "DelMembers.php";
+            edit_products_form.action = "DelProducts.php";
+            edit_user_form.action = "DelUsers.php";
+            
             console.log(del_edit_toggle_counter);
         }else{
             del_edit_toggle_counter--;
+            
+            edit_members_form.action = "EditMembers.php";
+            edit_products_for.action = "EditExistingProduct.php";
+            edit_user_form.action = "edit-verified-users.php";
+            
             console.log(del_edit_toggle_counter);
         }
     }
