@@ -37,7 +37,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 echo "<a href=\"new_user.php\">| Add New User</a>
                 <a href=\"Newmember.php\">| Add New Member</a>
                 <a href=\"new_sale.php\">| Add Sales Record</a>
-                <a href=\"Product.php\">| Add New Product</a>";
+                <a href=\"Product.php\">| Add New Product</a>
+                <input type=\"checkbox\" onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"</td>";
             }
         }
     }
@@ -90,6 +91,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         </tbody>
       </table>
       <input type="submit" id="edit_members_btn" value="Edit Member(s)">
+      <input type="submit" id="del_members_btn" value="Delete Members(s)">
+
   </details>
   </div>
   <div class="dashboard">
@@ -133,6 +136,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       </tbody>
     </table>
     <input type="submit" id="edit_products_btn" value="Edit Product(s)">
+    <input type="submit" id="del_products_btn" value="Delete Product(s)">
     </form>
     </details>
     </div>
@@ -214,7 +218,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       </tbody>
     
     </table>
+    
     <input type="submit" id="edit_verified_btn" value="Edit User(s)">
+    <input type="submit" id="del_verified_btn" value="Delete User(s)">
     </form>
     </details>
     </div>
@@ -228,9 +234,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     products_counter = 0;
     users_counter = 0;
     
+    del_edit_toggle_counter = 0;
+    
     var edit_members_btn = document.getElementById("edit_members_btn");
     var edit_products_btn = document.getElementById("edit_products_btn");
     var edit_verified_btn = document.getElementById("edit_verified_btn");
+   
+    var del_members_btn = document.getElementById("del_members_btn");
+    var del_products_btn = document.getElementById("del_products_btn");
+    var del_verified_btn = document.getElementById("del_verified_btn");
+    
+    function del_edit_toggle_btn_trigger(val){
+        if(val.checked){
+            del_edit_toggle_counter++;
+            console.log(del_edit_toggle_counter);
+        }else{
+            del_edit_toggle_counter--;
+            console.log(del_edit_toggle_counter);
+        }
+    }
     
     function edit_members_btn_trigger(val){
           if(val.checked){
@@ -240,12 +262,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
           }
           
           if(members_counter > 0){
-              edit_members_btn.style.visibility = "visible";
-              edit_members_btn.style.display = "block";
+              if(del_edit_toggle_counter == 0){
+                edit_members_btn.style.visibility = "visible";
+                edit_members_btn.style.display = "block";   
+              }else{
+                del_members_btn.style.visibility = "visible";
+                del_members_btn.style.display = "block";
+              }
           }else{
-              edit_members_btn.style.visibility = "hidden";
-              edit_members_btn.style.display = "none";
+              if(del_edit_toggle_counter == 0){
+                edit_members_btn.style.visibility = "hidden";
+                edit_members_btn.style.display = "none";
+              }else{
+                del_members_btn.style.visibility = "hidden";
+                del_members_btn.style.display = "none";
 
+              }
           }
       }
       
@@ -256,12 +288,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
               products_counter--;
           }
           
-          if(products_counter > 0){
-              edit_products_btn.style.visibility = "visible";
-              edit_products_btn.style.display = "block";
+        if(products_counter > 0){
+              if(del_edit_toggle_counter == 0){
+                edit_products_btn.style.visibility = "visible";
+                edit_products_btn.style.display = "block";   
+              }else{
+                del_products_btn.style.visibility = "visible";
+                del_products_btn.style.display = "block";
+              }
           }else{
-              edit_products_btn.style.visibility = "hidden";
-              edit_products_btn.style.display = "none";
+              if(del_edit_toggle_counter == 0){
+                edit_products_btn.style.visibility = "hidden";
+                edit_products_btn.style.display = "none";
+              }else{
+                del_products_btn.style.visibility = "hidden";
+                del_products_btn.style.display = "none";
+    
+              }
           }
       }
       
@@ -272,13 +315,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
               users_counter--;
           }
           
-          if(users_counter > 0){
-              edit_verified_btn.style.visibility = "visible";
-              edit_verified_btn.style.display = "block";
-
+            if(users_counter > 0){
+              if(del_edit_toggle_counter == 0){
+                edit_verified_btn.style.visibility = "visible";
+                edit_verified_btn.style.display = "block";   
+              }else{
+                del_verified_btn.style.visibility = "visible";
+                del_verified_btn.style.display = "block";
+              }
           }else{
-              edit_verified_btn.style.visibility = "hidden";
-              edit_verified_btn.style.display = "none";
+              if(del_edit_toggle_counter == 0){
+                edit_verified_btn.style.visibility = "hidden";
+                edit_verified_btn.style.display = "none";
+              }else{
+                del_verified_btn.style.visibility = "hidden";
+                del_verified_btn.style.display = "none";
+
+              }
           }
       }
   </script>
