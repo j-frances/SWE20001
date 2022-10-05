@@ -37,8 +37,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 echo "<a href=\"new_user.php\">| Add New User</a>
                 <a href=\"Newmember.php\">| Add New Member</a>
                 <a href=\"new_sale.php\">| Add Sales Record</a>
-                <a href=\"Product.php\">| Add New Product</a>
-                <input type=\"checkbox\" onclick=\"(this)\" id=\"del_edit_toggle\"</td>";
+                <a href=\"Product.php\">| Add New Product | </a>
+                <input type=checkbox onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"><a> Delete/Edit</a></td>";
             }
         }
     }
@@ -50,7 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     <summary>
       <h3 class="table-header">Members</h3>
     </summary>
-    <form action="EditMembers.php" class="edit-members-form" method="post">
+    <form action="EditMembers.php" class="edit_members_form" id="edit_members_form" method="post">
     <table class="table">
       <thead>
         <tr>
@@ -101,7 +101,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       <summary>
         <h3 class="table-header">Products</h3>
       </summary>
-      <form action="EditExistingProduct.php" class="edit-products-form" method="post">
+      <form action="EditExistingProduct.php" class="edit-products-form" id="edit_products_form" method="post">
       <table class="table">
         <thead>
 			<tr>
@@ -181,7 +181,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       <summary>
         <h3 class="table-header">Verified Users</h3>
       </summary>
-    <form action="edit-verified-users.php" class="edit-user-form" method="post">
+    <form action="edit-verified-users.php" class="edit-user-form" id="edit_user_form" method="post">
     <table class="table">
         <thead>
 			<tr>
@@ -246,6 +246,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         });
     });
     
+    var del_edit_toggle_btn = document.getElementById("del_edit_toggle");
+    
     var edit_members_btn = document.getElementById("edit_members_btn");
     var edit_products_btn = document.getElementById("edit_products_btn");
     var edit_verified_btn = document.getElementById("edit_verified_btn");
@@ -254,9 +256,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     var del_products_btn = document.getElementById("del_products_btn");
     var del_verified_btn = document.getElementById("del_verified_btn");
     
-    var edit_members_form = document.getElementsByClassName("edit-members-form")[0].attributes[0];
-    var edit_products_form = document.getElementsByClassName("edit-products-form")[0].attributes[0];
-    var edit_user_form = document.getElementsByClassName("edit-user-form")[0].attributes[0];
+    var edit_members_form = document.getElementById("edit_members_form");
+    var edit_products_form = document.getElementById("edit_products_form");
+    var edit_user_form = document.getElementById("edit_user_form");
     
     function del_edit_toggle_btn_trigger(val){
         if(val.checked){
@@ -266,16 +268,57 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
             edit_products_form.action = "DelProducts.php";
             edit_user_form.action = "DelUsers.php";
             
-            console.log(del_edit_toggle_counter);
+            clear_checkboxes();
+            reset_forms();
+            reset_counters();
         }else{
             del_edit_toggle_counter--;
             
             edit_members_form.action = "EditMembers.php";
-            edit_products_for.action = "EditExistingProduct.php";
+            edit_products_form.action = "EditExistingProduct.php";
             edit_user_form.action = "edit-verified-users.php";
             
-            console.log(del_edit_toggle_counter);
+            clear_checkboxes();
+            reset_forms();
+            reset_counters();
         }
+    }
+    
+    function clear_checkboxes(){
+        let checkboxes = document.querySelectorAll("input");
+        checkboxes.forEach(input => {
+            if(input.id != "del_edit_toggle"){
+                if (input.type == "checkbox"){
+                    input.checked = false;
+                }
+            }
+        });
+    }
+    
+    function reset_forms(){
+        edit_members_btn.style.visibility = "hidden";
+        edit_members_btn.style.display = "none";
+
+        del_members_btn.style.visibility = "hidden";
+        del_members_btn.style.display = "none";
+        
+        edit_products_btn.style.visibility = "hidden";
+        edit_products_btn.style.display = "none";
+
+        del_products_btn.style.visibility = "hidden";
+        del_products_btn.style.display = "none";
+
+        edit_verified_btn.style.visibility = "hidden";
+        edit_verified_btn.style.display = "none";
+
+        del_verified_btn.style.visibility = "hidden";
+        del_verified_btn.style.display = "none";
+    }
+    
+    function reset_counters(){
+        members_counter = 0;
+        products_counter = 0;
+        users_counter = 0;
     }
     
     function edit_members_btn_trigger(val){
