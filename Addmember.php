@@ -11,13 +11,14 @@ if ($mysqli -> connect_errno) {
   
 // input value 
 $Name = $_POST['Name'];
+$Address = $_POST['Address'];
 $Email = $_POST['Email'];
 $date_Created = date("Y-m-d H:i:s");
 $expiration_Date=date('Y-m-d', strtotime('+1 year', strtotime($date_Created)) );
 $Status = $_POST['Status'];
 
 // Attempt insert query execution
-$sql = "INSERT INTO Members (Name, Email, Date_Created, Expiration_Date, Status) VALUES (\"$Name\",\"$Email\",\"$date_Created\",\"$expiration_Date\",\"$Status\")";
+$sql = "INSERT INTO Members (Name, Address, Email, Date_Created, Expiration_Date, Status) VALUES (\"$Name\",\"$Address\",\"$Email\",\"$date_Created\",\"$expiration_Date\",\"$Status\")";
 
 $reset = "ALTER TABLE Members AUTO_INCREMENT = 1";
 
@@ -27,7 +28,7 @@ mysqli_query($link, $reset);
 
 
 
-header("Location: https://gotogro.000webhostapp.com/Product.php");
+header("Location: https://gotogro.000webhostapp.com/Home.php");
 
  
 // Close connection

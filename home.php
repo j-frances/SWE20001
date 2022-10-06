@@ -57,6 +57,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
             <th></th>
           <th>ID</th>
           <th>Full Name</th>
+          <th>Address</th>
           <th>Email</th>
           <th>Date Created</th>
           <th>Expiration Date</th>
@@ -77,6 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                       <td><input type=\"checkbox\" onclick=\"edit_members_btn_trigger(this)\" id=" . $row["ID"] . "</td>
                       <td>" . $row["ID"] . "</td>
                       <td>" . $row["Name"] . "</td>
+                      <td>" . $row["Address"] . "</td>
                       <td>" . $row["Email"] . "</td>
                       <td>" . $row["Date_Created"] . "</td>
                       <td>" . $row["Expiration_Date"] . "</td>";
