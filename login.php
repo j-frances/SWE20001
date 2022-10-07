@@ -8,6 +8,11 @@ $mysqli = include('connect.php');
 $username = base64_decode($_POST['username']);
 $password = base64_decode($_POST['password']);
 
+$username = explode("$", $username);
+$password = explode("$", $password);
+
+$username = $username[0];
+$password = $password[0];
 
 // Check connection
 if ($mysqli -> connect_errno) {
