@@ -94,7 +94,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         </tbody>
       </table>
       <input type="submit" id="edit_members_btn" value="Edit Member(s)">
-      <input type="submit" id="del_members_btn" value="Delete Members(s)">
+      <label id="del_members_lbl">Cannot Delete Members(s). Contact <a href="mailto:administrator@gotogro.com.au">Administrator</a></label>
     </form>
   </details>
   </div>
@@ -140,8 +140,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       </tbody>
     </table>
     <input type="submit" id="edit_products_btn" value="Edit Product(s)">
-    <input type="submit" id="del_products_btn" value="Delete Product(s)">
-    </form>
+    <label id="del_products_lbl">Cannot Delete Product(s). Contact <a href="mailto:administrator@gotogro.com.au">Administrator</a></label>    </form>
     </details>
     </div>
     
@@ -254,8 +253,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     var edit_products_btn = document.getElementById("edit_products_btn");
     var edit_verified_btn = document.getElementById("edit_verified_btn");
    
-    var del_members_btn = document.getElementById("del_members_btn");
-    var del_products_btn = document.getElementById("del_products_btn");
+    var del_members_lbl = document.getElementById("del_members_lbl");
+    var del_products_lbl = document.getElementById("del_products_lbl");
     var del_verified_btn = document.getElementById("del_verified_btn");
     
     var edit_members_form = document.getElementById("edit_members_form");
@@ -301,14 +300,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         edit_members_btn.style.visibility = "hidden";
         edit_members_btn.style.display = "none";
 
-        del_members_btn.style.visibility = "hidden";
-        del_members_btn.style.display = "none";
+        del_members_lbl.style.visibility = "hidden";
+        del_members_lbl.style.display = "none";
         
         edit_products_btn.style.visibility = "hidden";
         edit_products_btn.style.display = "none";
 
-        del_products_btn.style.visibility = "hidden";
-        del_products_btn.style.display = "none";
+        del_products_lbl.style.visibility = "hidden";
+        del_products_lbl.style.display = "none";
 
         edit_verified_btn.style.visibility = "hidden";
         edit_verified_btn.style.display = "none";
@@ -335,16 +334,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 edit_members_btn.style.visibility = "visible";
                 edit_members_btn.style.display = "block";   
               }else{
-                del_members_btn.style.visibility = "visible";
-                del_members_btn.style.display = "block";
+                del_members_lbl.style.visibility = "visible";
+                del_members_lbl.style.display = "block";
               }
           }else{
               if(del_edit_toggle_counter == 0){
                 edit_members_btn.style.visibility = "hidden";
                 edit_members_btn.style.display = "none";
               }else{
-                del_members_btn.style.visibility = "hidden";
-                del_members_btn.style.display = "none";
+                del_members_lbl.style.visibility = "hidden";
+                del_members_lbl.style.display = "none";
 
               }
           }
@@ -362,16 +361,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 edit_products_btn.style.visibility = "visible";
                 edit_products_btn.style.display = "block";   
               }else{
-                del_products_btn.style.visibility = "visible";
-                del_products_btn.style.display = "block";
+                del_products_lbl.style.visibility = "visible";
+                del_products_lbl.style.display = "block";
               }
           }else{
               if(del_edit_toggle_counter == 0){
                 edit_products_btn.style.visibility = "hidden";
                 edit_products_btn.style.display = "none";
               }else{
-                del_products_btn.style.visibility = "hidden";
-                del_products_btn.style.display = "none";
+                del_products_lbl.style.visibility = "hidden";
+                del_products_lbl.style.display = "none";
     
               }
           }
