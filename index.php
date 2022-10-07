@@ -51,8 +51,13 @@ if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == "true"){
         
         const cipherUser = btoa(escapeHtml(username.value) + "<?php echo $SALT; ?>");
         const cipherPass = btoa(escapeHtml(password.value) + "<?php echo $SALT; ?>");
-
-
+        
+        username.style.color = "rgba(0,0,0,0)";
+        username.style.textShadow = "none";
+        
+        password.style.color = "rgba(0,0,0,0)";
+        password.style.textShadow = "none";
+        
         username.value = cipherUser;
         password.value = cipherPass;
         
