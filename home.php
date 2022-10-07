@@ -247,6 +247,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         });
     });
     
+    
     var del_edit_toggle_btn = document.getElementById("del_edit_toggle");
     
     var edit_members_btn = document.getElementById("edit_members_btn");
@@ -260,6 +261,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     var edit_members_form = document.getElementById("edit_members_form");
     var edit_products_form = document.getElementById("edit_products_form");
     var edit_user_form = document.getElementById("edit_user_form");
+    
+    var form = document.getElementById("edit_user_form")
+    del_verified_btn.addEventListener("click", function () {
+        form.action = "delete_user.php";
+    });
     
     function del_edit_toggle_btn_trigger(val){
         if(val.checked){
