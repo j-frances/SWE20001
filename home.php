@@ -223,7 +223,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     </table>
     
     <input type="submit" id="edit_verified_btn" value="Edit User(s)">
-    <input type="submit" id="del_verified_btn" value="Delete User(s)">
+    <input type="submit" id="del_verified_btn" onclick="return confirm('Are you sure?')" value="Delete User(s)">
     </form>
     </details>
     </div>
