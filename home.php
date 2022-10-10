@@ -134,6 +134,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                     <td>" . $row["Quantity"] . "</td>
                     <td>" . $row["Price"] . "</td>
                     </tr>";
+		    $p = $row["ProductName"];
+                    $alert_const = 10;
+                    if($row["Quantity"] < $alert_const){
+                        echo "<script type='text/javascript'>alert('Stock Warning!! Quantity is low for $p')</script>";
+                    }
                  }
             }
       ?>
