@@ -15,7 +15,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
   <link href="stylesheet.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap">
-  <title>🥬 GoToGro Management Portal</title>
+  <title>🥬 GoToGro Management Portal--</title>
 </head>
 <body class="homepage" onunload="test()">
   <header>
@@ -44,6 +44,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     }
     ?>
     <a id="logout" href="logout.php">| Log Out</a>
+    <img id="inventory_bell" src="img/bell_noAlert.png" onclick="inDemandAlert()">
   </header>
   <div class="dashboard" style="margin-top: 70px;">
   <details>
@@ -103,6 +104,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
       <summary>
         <h3 class="table-header">Products</h3>
       </summary>
+     <script>var stockWarning = [];</script>;
       <form action="EditExistingProduct.php" class="edit-products-form" id="edit_products_form" method="post">
       <table class="table">
         <thead>
@@ -134,13 +136,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                     <td>" . $row["Quantity"] . "</td>
                     <td>" . $row["Price"] . "</td>
                     </tr>";
-		    $p = $row["ProductName"];
+                    $p = $row["ProductName"];
                     $alert_const = 10;
                     if($row["Quantity"] < $alert_const){
-                        echo "<script type='text/javascript'>alert('Stock Warning!! Quantity is low for $p')</script>";
+                        echo "<script type='text/javascript'>
+                        var item = \" " . $p ." : " . $row['Quantity'] ." \";
+                        stockWarning.push(item);
+                        document.getElementById(\"inventory_bell\").src = \"img/bell_Alert.png\";
+                        </script>";
                     }
                  }
+                 
             }
+            
       ?>
       </tbody>
     </table>
@@ -232,6 +240,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     </form>
     </details>
     </div>
+    
+
+    
   <footer>
     <a>&#169 GoToGro Inc. 2022</a>
     <a href="mailto:103426340@student.swin.edu.au,101231241@student.swin.edu.au,103141481@student.swin.edu.au,103068001@student.swin.edu.au,103492189@student.swin.edu.au,103175309@student.swin.edu.au"> | Contact</a>
@@ -252,7 +263,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
         });
     });
     
-    
     var del_edit_toggle_btn = document.getElementById("del_edit_toggle");
     
     var edit_members_btn = document.getElementById("edit_members_btn");
@@ -271,6 +281,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     del_verified_btn.addEventListener("click", function () {
         form.action = "delete_user.php";
     });
+    
+    function inDemandAlert(){
+        stockWarning = stockWarning.join("\n") + "\n";
+        alert("Stock Warning! Quantity is low for these items:\n" + stockWarning);
+    }
     
     function del_edit_toggle_btn_trigger(val){
         if(val.checked){
@@ -386,6 +401,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
               }
           }
       }
+      
+  
+  
+
       
       function edit_verified_btn_trigger(val){
           if(val.checked){
