@@ -34,16 +34,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
             if($row['Permission_level'] != 1){
                 continue;
             }else{
-                echo "<a href=\"new_user.php\">| Add New User</a>
-                <a href=\"Newmember.php\">| Add New Member</a>
-                <a href=\"new_sale.php\">| Add Sales Record</a>
-                <a href=\"Product.php\">| Add New Product | </a>
+                echo "<a href=\"new_user.php\"><button>Add New User</button></a>
+                <a href=\"Newmember.php\"><button>Add New Member</button></a>
+                <a href=\"new_sale.php\"><button>Add Sales Record</button></a>
+                <a href=\"Product.php\"><button>Add New Product</button></a>
                 <input type=checkbox onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"><a> Delete/Edit</a></td>";
             }
         }
     }
     ?>
-    <a id="logout" href="logout.php">| Log Out</a>
+    <a id="logout" href="logout.php"><button>Log Out</button></a>
     <img id="inventory_bell" src="img/bell_noAlert.png" onclick="inDemandAlert()">
   </header>
   <div class="dashboard" style="margin-top: 70px;">
