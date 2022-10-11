@@ -15,7 +15,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
   <link href="stylesheet.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap">
-  <title>🥬 GoToGro Management Portal--</title>
+  <title>🥬 GoToGro Management Portal</title>
 </head>
 <body class="homepage" onunload="test()">
   <header>
@@ -283,8 +283,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     });
     
     function inDemandAlert(){
-        stockWarning = stockWarning.join("\n") + "\n";
-        alert("Stock Warning! Quantity is low for these items:\n" + stockWarning);
+        var array = []
+        array = stockWarning.join("\n") + "\n";
+        alert("Stock Warning! Quantity is low for these items:\n" + array);
     }
     
     function del_edit_toggle_btn_trigger(val){
