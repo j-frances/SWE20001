@@ -11,7 +11,7 @@
   </header>
   <div class="add-user">
     <h1 id="add-user-header">Add New Members</h1>
-      <form id="add-user-form" action="Addmember.php" method="post">
+      <form id="add-user-form" action="home.php" method="post">
         <input type="text" name="Name" placeholder="Full Name" required="required" />
         <input type="text" name="Address" placeholder="Address" required="required" />
         <input type="text" name="Email" placeholder="Email" required="required" />
