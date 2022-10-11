@@ -450,3 +450,23 @@ hr{
 .sales_entry .successMsg {
   color: rgb(0, 172, 0);
 }
+.homepage header button {
+    background: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    outline: none;
+    transition: ease-out 0.5s;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.homepage header #logout {
+    margin-left: 10%;
+}
+.homepage header button:hover {
+    background: white;
+    color: black;
+}
