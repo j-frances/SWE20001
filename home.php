@@ -285,8 +285,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     function inDemandAlert(){
         var array = []
         array = stockWarning.join("\n") + "\n";
-        alert("Stock Warning! Quantity is low for these items:\n" + array);
+        if(stockWarning.length > 0){
+            alert("Stock Warning! Quantity is low for these items:\n" + array);
+        }
     }
+    
     
     function del_edit_toggle_btn_trigger(val){
         if(val.checked){
