@@ -240,6 +240,48 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
     </form>
     </details>
     </div>
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 80px 60px;
+      cursor: pointer;
+    }
+
+    .button1 {background-color: #4CAF50;} /* Green */
+    .button2 {background-color: #008CBA;} /* Green */
+    
+    </style>    
+  <div class="form-group">
+    <button onclick="Exportg()" class="button button1">Export Daily Data to CSV File</button>
+    <button onclick="Exportm()" class="button button2">Export Monthly Data to CSV File</button> 
+
+  </div>
+  <script>
+        function Exportg()
+        {
+            
+            var conf = confirm("Export General Daily Data to CSV?");
+            if(conf == true)
+            {
+                window.open("export_daily.php", '_blank');
+            }
+        }
+        function Exportm()
+        {
+            
+            var conf = confirm("Export Monthly Members/Sales Data to CSV?");
+            if(conf == true)
+            {
+                window.open("export_monthly.php", '_blank');
+            }
+        }
+  </script>
     
 
     
