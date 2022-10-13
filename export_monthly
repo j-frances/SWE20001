@@ -1,0 +1,17 @@
+<?php
+$query = "SELECT * FROM Members";
+$members = array();
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $members[] = $row;
+    }
+}
+header('Content-Type: text/csv; charset=utf-8');
+header('Content-Disposition: attachment; filename=MonthlyReport.csv');
+$output = fopen('php://output', 'w');
+fputcsv($output, array('ID', 'Name', 'Address', 'Email', 'Date Created', 'Expiration Date'));
+fputcsv($output, $members);
+while($row = $result->fetch_assoc()) {
+    fputcsv($output, $row.Name);
+}
+?>
