@@ -38,7 +38,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != "true"){
                 <a href=\"Newmember.php\"><button>Add New Member</button></a>
                 <a href=\"new_sale.php\"><button>Add Sales Record</button></a>
                 <a href=\"Product.php\"><button>Add New Product</button></a>
-                <input type=checkbox onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"><a> Delete/Edit</a></td>";
+                <label><input type=checkbox onclick=\"del_edit_toggle_btn_trigger(this)\" id=\"del_edit_toggle\"><a>Delete</a></label>";
             }
         }
     }
