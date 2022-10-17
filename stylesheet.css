@@ -470,3 +470,21 @@ hr{
     background: white;
     color: black;
 }
+.homepage label {
+    margin-left: 10px;
+}
+.homepage label input {
+    display: none;
+}
+.homepage label a {
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid white;
+}
+.homepage label input:checked + a {
+    color: #000;
+    background: red;
+    border: 1px solid #fff;
+}
