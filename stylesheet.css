@@ -462,9 +462,7 @@ hr{
     transition: ease-out 0.5s;
     border: 1px solid white;
     cursor: pointer;
-}
-.homepage header #logout {
-    margin-left: 10%;
+    letter-spacing: 1px;
 }
 .homepage header button:hover {
     background: white;
@@ -482,9 +480,22 @@ hr{
     border-radius: 20px;
     padding: 5px 10px;
     border: 1px solid white;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+}
+.homepage label a:hover {
+    background: white;
+    color: black;
 }
 .homepage label input:checked + a {
     color: #000;
     background: red;
     border: 1px solid #fff;
+}
+.table td:nth-child(1) {
+    width: 1px;
+}
+.table td:nth-child(1) input {
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
